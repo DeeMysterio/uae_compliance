@@ -115,11 +115,11 @@ after_install = "uae_compliance.install.after_install"
 doc_events = {
 	"Purchase Invoice": {
 		"validate": [
-			"erpnext.regional.india.utils.validate_reverse_charge_transaction",
-			"erpnext.regional.india.utils.update_itc_availed_fields",
-			"erpnext.regional.united_arab_emirates.utils.update_grand_total_for_rcm",
-			"erpnext.regional.united_arab_emirates.utils.validate_returns",
-			"erpnext.regional.india.utils.update_taxable_values"
+			"uae_compliance.utils.validate_reverse_charge_transaction",
+			"uae_compliance.utils.update_itc_availed_fields",
+			"uae_compliance.utils.update_grand_total_for_rcm",
+			"uae_compliance.utils.validate_returns",
+			"uae_compliance.utils.update_taxable_values"
 		]
 	}
 }
