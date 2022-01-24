@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include uae_compliance *.css
+recursive-include uae_compliance *.csv
+recursive-include uae_compliance *.html
+recursive-include uae_compliance *.ico
+recursive-include uae_compliance *.js
+recursive-include uae_compliance *.json
+recursive-include uae_compliance *.md
+recursive-include uae_compliance *.png
+recursive-include uae_compliance *.py
+recursive-include uae_compliance *.svg
+recursive-include uae_compliance *.txt
+recursive-exclude uae_compliance *.pyc
