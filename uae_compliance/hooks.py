@@ -66,7 +66,7 @@ app_license = "MIT"
 # ------------
 
 # before_install = "uae_compliance.install.before_install"
-# after_install = "uae_compliance.install.after_install"
+after_install = "uae_compliance.install.after_install"
 
 # Uninstallation
 # ------------
@@ -112,6 +112,17 @@ app_license = "MIT"
 #	}
 # }
 
+doc_events = {
+	"Purchase Invoice": {
+		"validate": [
+			"erpnext.regional.india.utils.validate_reverse_charge_transaction",
+			"erpnext.regional.india.utils.update_itc_availed_fields",
+			"erpnext.regional.united_arab_emirates.utils.update_grand_total_for_rcm",
+			"erpnext.regional.united_arab_emirates.utils.validate_returns",
+			"erpnext.regional.india.utils.update_taxable_values"
+		]
+	}
+}
 # Scheduled Tasks
 # ---------------
 
@@ -188,3 +199,9 @@ app_license = "MIT"
 # 	"uae_compliance.auth.validate"
 # ]
 
+regional_overrides = {
+	'United Arab Emirates': {
+		'erpnext.controllers.taxes_and_totals.update_itemised_tax_data': 'uae_compliance.utils.update_itemised_tax_data',
+		'erpnext.accounts.doctype.purchase_invoice.purchase_invoice.make_regional_gl_entries': 'uae_compliance.utils.make_regional_gl_entries',
+	},
+}
